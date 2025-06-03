@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block head %}
+<title>{% block title %}{{product.name}}{% endblock title %}</title>
+{% endblock head %}
+{% block body %}
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>See more Details</p>
+						<h1>{{product.name}}</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="single-product-img">
+						<img src="/media/{{product.image}}/" alt="">
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="single-product-content">
+						<h3>{{product.name}}</h3>
+						<p class="single-product-pricing"><span>{{product.unit}}</span>{{product.price}}Tk</p>
+						<p>{{product.detail|safe}}</p>
+						<div class="single-product-form">
+							<form method="POST" action="/cart/add-product/{{product.id}}/">
+								{% csrf_token %}
+								<input type="number" placeholder="Max - {{product.stock}}" min="0" max="{{product.stock}}" name="qty" required><br/>
+								<button type='submit' class='button' style="font-family: 'Poppins', sans-serif;display: inline-block;background-color:#F28123;color: #fff;padding: 10px 20px;border-radius:8px;border:2px #fff solid;"><i class="fas fa-shopping-cart"></i> Add</button>
+							</form>
+							{% comment %} <p><strong>Categories: </strong>Fruits, Organic</p> {% endcomment %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+	<div class='container'>
+		
+	</div>
+	
+{% endblock body %}

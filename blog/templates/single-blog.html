@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+{% block head %}
+<title>{% block title %}{{blog.title}}{% endblock title %}</title>
+{% endblock head %}
+{% block body %}
+	
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Read the Details</p>
+						<h1>{{blog.title}}</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="single-article-section">
+						<div class="single-article-text">
+							<div class="single-artcile-bg" style="background:url('/media/{{blog.image}}/') no-repeat;background-size:cover;"></div>
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i> Admin</span>
+								<span class="date"><i class="fas fa-calendar"></i> {{blog.created_at|date}}</span>
+							</p>
+							<h2>{{blog.title}}</h2>
+							<p>{{blog.detail|safe}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="sidebar-section">
+						<div class="recent-posts">
+							<h4>Recent Posts</h4>
+							<ul>
+								{% if  recent_blogs %}
+									{% for recent_blog in recent_blogs %}
+									<li><a href="/blog/single-blog/{{recent_blog.id}}/">{{recent_blog.title}}</a></li>
+									{% endfor %}
+								{% else %}
+									<a>No recent blogs found</a>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock body %}

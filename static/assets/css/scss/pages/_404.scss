@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* -----------------------------------------------------------------------------
 
 # 404 Page Styles
@@ -31,4 +32,39 @@
   display: table-cell;
   vertical-align: middle;
   width: 100%;
+=======
+/* -----------------------------------------------------------------------------
+
+# 404 Page Styles
+
+----------------------------------------------------------------------------- */
+.error-text {
+  i {
+    font-size: 90px;
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+.full-height-section {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.full-height-tablecell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+>>>>>>> edd73f53861ee67452748d2333ba410d00e45a91
 }

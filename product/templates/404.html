@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'index.html' %}
 {% block head %}
 <title>{% block title %}{{about_us.name}} | OOPS!{% endblock title %}</title>
@@ -34,4 +35,42 @@
 			</div>
 		</div>
 		<!-- end error section -->
+=======
+{% extends 'index.html' %}
+{% block head %}
+<title>{% block title %}{{about_us.name}} | OOPS!{% endblock title %}</title>
+{% endblock head %}
+{% block body %}
+		<!-- breadcrumb-section -->
+		<div class="breadcrumb-section breadcrumb-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 offset-lg-2 text-center">
+						<div class="breadcrumb-text">
+							<p>Fresh adn Organic</p>
+							<h1>{{about_us.name}}</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end breadcrumb section -->
+		<!-- error section -->
+		<div class="full-height-section error-section">
+			<div class="full-height-tablecell">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 offset-lg-2 text-center">
+							<div class="error-text">
+								<i class="far fa-sad-cry"></i>
+								<h1>Oops! {{message}}</h1>
+								<a href="{% url 'home' %}" class="boxed-btn">Back to Home</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end error section -->
+>>>>>>> edd73f53861ee67452748d2333ba410d00e45a91
 {% endblock body %}

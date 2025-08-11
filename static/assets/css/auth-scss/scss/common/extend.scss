@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* @extend display-flex; */
 display-flex {
     display: flex;
@@ -9,3 +10,16 @@ list-type-ulli {
     margin: 0;
     padding: 0;
 }
+=======
+/* @extend display-flex; */
+display-flex {
+    display: flex;
+    display: -webkit-flex;
+}
+/* @extend list-type-ulli; */
+list-type-ulli {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+>>>>>>> edd73f53861ee67452748d2333ba410d00e45a91

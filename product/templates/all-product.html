@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'index.html' %}
 {% load static %}
 {% block head %}
@@ -56,4 +57,64 @@
 			</div>
 		</div>
 	</div>
+=======
+{% extends 'index.html' %}
+{% load static %}
+{% block head %}
+<title>{% block title %}Shop{% endblock title %}</title>
+{% endblock head %}
+
+{% block body %}
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Fresh and Organic</p>
+						<h1>Shop</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- products -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+
+			<div class="row product-lists">
+				{% for product in products %}
+				<div class="col-lg-4 col-md-6 text-center strawberry">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="/product/single-product/{{product.id}}/"><img src="/media/{{product.image}}/" alt=""></a>
+						</div>
+						<h3>{{product.name}}</h3>
+						<p class="product-price"><span>{{product.unit}}</span> {{product.price}}Tk </p>
+						<a href="/cart/add-product/{{product.id}}/" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<div class="pagination-wrap">
+						<ul>
+							{% if products.has_previous %}
+							<li><a href="?page={{products.previous_page_number}}">Prev</a></li>
+							{% endif %}
+							<li><a>{{products.number}}</a></li>
+							{% if products.has_next %}
+							<li><a href="?page={{products.next_page_number}}">Next</a></li>
+							{% endif %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+>>>>>>> edd73f53861ee67452748d2333ba410d00e45a91
 {% endblock body %}

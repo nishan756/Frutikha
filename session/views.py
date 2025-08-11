@@ -45,21 +45,6 @@ def SignUp(request):
         form = CustomUserCreationForm()
     return render(request,'signup.html',{'form':form})   
 
-@login_required(login_url = 'login')
-def ChangePassword(request):
-    if request.method == 'POST':
-        form = PasswordChangeForm(request.user,request.POST)
-        
-        if form.is_valid():
-            user = form.save()
-            update_session_auth_hash(request,user = user)
-            messages.success(request,'Successfully change your password')
-            return redirect('home')
-        else:
-            messages.error(request,f'OOPS!')
-    else:
-        form = PasswordChangeForm(request.user)
-    return render(request,'changepassword.html',{'form':form})
     
 
 
